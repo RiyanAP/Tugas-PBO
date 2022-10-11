@@ -7,6 +7,7 @@ public class MainClass {
    
     public static void main(String[] args) {
         BufferedReader inp = new BufferedReader(new InputStreamReader(System.in));
+        String lagi, tkl = "";
         int total = 0;
         
         try{
@@ -22,16 +23,20 @@ public class MainClass {
                 String tujuan = inp.readLine();
                 System.out.print("Isi tanggal berangkat : ");
                 String tbr = inp.readLine();
-                System.out.print("Isi tanggal kembali : ");
-                String tkl = inp.readLine();
+                System.out.print("Pesan pulang pergi (y/n) : ");
+                String pp = inp.readLine();
+                if (pp.equalsIgnoreCase("Y")) {
+                    System.out.print("Tanggal Kembali: ");
+                    tkl = inp.readLine();
+                    }
                 System.out.println("-- Pilih Maskapai --");
                 System.out.println("\n1. Lion Air \n2. Citilink");
                 System.out.print("Pilih maskapai : ");
                 int tipe = Integer.parseInt(inp.readLine());
-                LionAir pesawat1[] = new LionAir[jml];        
-                Citilink pesawat2[]= new Citilink[jml]; 
+                        
                 switch (tipe){
                     case 1:
+                        LionAir pesawat1[] = new LionAir[jml];
                         System.out.println("-- Selamat Datang di Maskapai Lion Air --");
                         for(int p = 0; p<pesawat1.length;p++){
                             System.out.println("Silahkan isi data penumpang");
@@ -47,7 +52,7 @@ public class MainClass {
                             String np = inp.readLine();
                             System.out.print("No Kursi : ");
                             String nk = inp.readLine();
-                            pesawat1[p] = new LionAir(jml,0,0, tujuan, np, nk, bookingID, nik, nm, jkel, tbr, tkl, asal);
+                            pesawat1[p] = new LionAir(jml, asal, tujuan, np, nk, bookingID, nik, nm, jkel, tbr, tkl);
                             System.out.println("");
                         }
                         for (int p=0; p<pesawat1.length; ++p) {
@@ -69,7 +74,8 @@ public class MainClass {
                         System.out.println("Total : " + total);
                     break;                       
                     case 2:
-                      System.out.println("-- Selamat Datang di Maskapai Lion Air --");
+                        Citilink pesawat2[]= new Citilink[jml]; 
+                        System.out.println("-- Selamat Datang di Maskapai Lion Air --");
                         for(int p = 0; p<pesawat2.length;p++){
                             System.out.println("Silahkan isi data penumpang");
                             System.out.print("Booking ID : ");
@@ -84,7 +90,7 @@ public class MainClass {
                             String np = inp.readLine();
                             System.out.print("No Kursi : ");
                             String nk = inp.readLine();
-                            pesawat2[p] = new Citilink(jml,0,0, tujuan, np, nk, bookingID, nik, nm, jkel, tbr, tkl, asal);
+                            pesawat2[p] = new Citilink(jml, asal, tujuan, np, nk, bookingID, nik, nm, jkel, tbr, tkl);
                             System.out.println("");
                         }
                         for (int p=0; p<pesawat2.length; ++p) {
@@ -105,10 +111,10 @@ public class MainClass {
                         }
                         System.out.println("Total : " + total);
                     break;
-                    case 3:
-                        System.exit(0);
                 }
-            }while(true);
+                System.out.print("\nPesan Lagi (Y/N): ");
+                lagi = inp.readLine();
+            }while(lagi.equalsIgnoreCase("y"));
         } catch (IOException | NumberFormatException e) {
             System.out.println("Inputan Salah / Bukan Angka");
         }

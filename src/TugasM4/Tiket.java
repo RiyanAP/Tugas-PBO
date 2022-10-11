@@ -9,7 +9,7 @@ package TugasM4;
  * @author Riyan AdPt
  */
 public class Tiket {
-    public String bookingID, nik, nama, jen_kelamin, tglBerangkat, tglKembali, kotaAsal;
+    String bookingID, nik, nama, jen_kelamin, tglBerangkat, tglKembali, kotaAsal;
 
     public Tiket(String bookingID, String nik, String nama, String jen_kelamin, String tglBerangkat, String tglKembali, String kotaAsal) {
         this.bookingID = bookingID;

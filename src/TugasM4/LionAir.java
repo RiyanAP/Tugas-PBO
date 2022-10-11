@@ -12,43 +12,16 @@ public class LionAir extends Tiket{
     private int jumPenumpang, harga, total;
     private String kotaTujuan, noPesawat, noKursi;
 
-    public LionAir(int jumPenumpang, int harga, int total, String kotaTujuan, String noPesawat, String noKursi, String bookingID, String nik, String nama, String jen_kelamin, String tglBerangkat, String tglKembali, String kotaAsal) {
+    public LionAir(int jumPenumpang, String kotaAsal, String kotaTujuan, String noPesawat, String noKursi, String bookingID, String nik, String nama, String jen_kelamin, String tglBerangkat, String tglKembali) {
         super(bookingID, nik, nama, jen_kelamin, tglBerangkat, tglKembali, kotaAsal);
         this.jumPenumpang = jumPenumpang;
-        this.harga = harga;
         this.kotaTujuan = kotaTujuan;
         this.noPesawat = noPesawat;
         this.noKursi = noKursi;
-        this.total = total;
     }
 
     public int getJumPenumpang() {
         return jumPenumpang;
-    }
-
-    public int getHarga() {
-        if(kotaAsal.equalsIgnoreCase("Surabaya")){
-            if(kotaTujuan.equalsIgnoreCase("Bali") && kotaTujuan.equalsIgnoreCase("Lombok")){
-                harga = 500000;
-            }
-            else if (kotaTujuan.equalsIgnoreCase("Jakarta") && kotaTujuan.equalsIgnoreCase("Yogyakarta")){
-                harga = 600000;
-            }
-            else if (kotaTujuan.equalsIgnoreCase("Balikpapan") && kotaTujuan.equalsIgnoreCase("Makassar")){
-                harga = 700000;
-            }
-        }else if(kotaAsal.equalsIgnoreCase("Jakarta")){
-            if(kotaTujuan.equalsIgnoreCase("Bali") && kotaTujuan.equalsIgnoreCase("Lombok")){
-                harga = 700000;
-            }
-            else if (kotaTujuan.equalsIgnoreCase("Surabaya") && kotaTujuan.equalsIgnoreCase("Yogyakarta")){
-                harga = 750000;
-            }
-            else if (kotaTujuan.equalsIgnoreCase("Balikpapan") && kotaTujuan.equalsIgnoreCase("Makassar")){
-                harga = 800000;
-            }
-        }
-        return harga;
     }
 
     public String getKotaTujuan() {
@@ -62,10 +35,35 @@ public class LionAir extends Tiket{
     public String getNoKursi() {
         return noKursi;
     }
+    
+    public int getHarga() {
+        if(getKotaAsal().equalsIgnoreCase("Surabaya")){
+            if(getKotaTujuan().equalsIgnoreCase("Bali") || getKotaTujuan().equalsIgnoreCase("Lombok")){
+                harga = 500000;
+            }
+            else if (getKotaTujuan().equalsIgnoreCase("Jakarta") || getKotaTujuan().equalsIgnoreCase("Yogyakarta")){
+                harga = 600000;
+            }
+            else if (getKotaTujuan().equalsIgnoreCase("Balikpapan") || getKotaTujuan().equalsIgnoreCase("Makassar")){
+                harga = 700000;
+            }
+        }else if(getKotaAsal().equalsIgnoreCase("Jakarta")){
+            if(getKotaTujuan().equalsIgnoreCase("Bali") || getKotaTujuan().equalsIgnoreCase("Lombok")){
+                harga = 700000;
+            }
+            else if (getKotaTujuan().equalsIgnoreCase("Surabaya") || getKotaTujuan().equalsIgnoreCase("Yogyakarta")){
+                harga = 750000;
+            }
+            else if (getKotaTujuan().equalsIgnoreCase("Balikpapan") || getKotaTujuan().equalsIgnoreCase("Makassar")){
+                harga = 800000;
+            }
+        }
+        return harga;
+    }
 
     public int getTotal() {
         total = getHarga() * getJumPenumpang();
-        return total;
+    return total;
     }
     
     
