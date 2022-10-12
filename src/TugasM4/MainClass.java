@@ -115,8 +115,8 @@ public class MainClass {
                 System.out.print("\nPesan Lagi (Y/N): ");
                 lagi = inp.readLine();
             }while(lagi.equalsIgnoreCase("y"));
-        } catch (IOException | NumberFormatException e) {
-            System.out.println("Inputan Salah / Bukan Angka");
+        } catch (Exception e){
+            System.out.println(e);
         }
     }
 }
