@@ -99,7 +99,7 @@ public class MainClass {
                             System.out.println("");
                         }
                         for (int p=0; p<pesawat2.length; ++p) {
-                            System.out.println("-- Preview Tiket Lion Air --");
+                            System.out.println("-- Preview Tiket Citilink --");
                             System.out.println("============================");
                             System.out.println("Booking ID : " + pesawat2[p].getBookingID());
                             System.out.println("NIK : " + pesawat2[p].getNik());
@@ -107,7 +107,9 @@ public class MainClass {
                             System.out.println("Kota Asal : " + pesawat2[p].getKotaAsal());
                             System.out.println("Kota Tujuan : " + pesawat2[p].getKotaTujuan());
                             System.out.println("Tanggal Berangkat : " + pesawat2[p].getTglBerangkat());
-                            System.out.println("Tanggal Kembali : " + pesawat2[p].getTglKembali());
+                            if (pp.equalsIgnoreCase("Y")) {
+                                System.out.println("Tanggal Kembali : " + pesawat2[p].getTglKembali());
+                            }
                             System.out.println("Nomor Pesawat : " + pesawat2[p].getNoPesawat());
                             System.out.println("Nomor Kursi : " + pesawat2[p].getNoKursi());
                             System.out.println("Harga Tiket : " + pesawat2[p].getHarga());

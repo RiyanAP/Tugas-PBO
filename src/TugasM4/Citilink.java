@@ -38,7 +38,7 @@ public class Citilink extends Tiket{
     
     public int getHarga() {
         if(getKotaAsal().equalsIgnoreCase("Surabaya")){
-            if(getKotaTujuan().equalsIgnoreCase("Bali") && getKotaTujuan().equalsIgnoreCase("Lombok")){
+            if(getKotaTujuan().equalsIgnoreCase("Bali") || getKotaTujuan().equalsIgnoreCase("Lombok")){
                 harga = 700000;
             }
             else if (getKotaTujuan().equalsIgnoreCase("Jakarta") || getKotaTujuan().equalsIgnoreCase("Yogyakarta")){
