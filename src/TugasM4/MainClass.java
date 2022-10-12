@@ -29,6 +29,9 @@ public class MainClass {
                     System.out.print("Tanggal Kembali: ");
                     tkl = inp.readLine();
                     }
+                else if(pp.equalsIgnoreCase("N")){
+                    tkl = "";
+                }
                 System.out.println("-- Pilih Maskapai --");
                 System.out.println("\n1. Lion Air \n2. Citilink");
                 System.out.print("Pilih maskapai : ");
@@ -64,7 +67,9 @@ public class MainClass {
                             System.out.println("Kota Asal : " + pesawat1[p].getKotaAsal());
                             System.out.println("Kota Tujuan : " + pesawat1[p].getKotaTujuan());
                             System.out.println("Tanggal Berangkat : " + pesawat1[p].getTglBerangkat());
-                            System.out.println("Tanggal Kembali : " + pesawat1[p].getTglKembali());
+                            if (pp.equalsIgnoreCase("Y")) {
+                                System.out.println("Tanggal Kembali : " + pesawat1[p].getTglKembali());
+                            }
                             System.out.println("Nomor Pesawat : " + pesawat1[p].getNoPesawat());
                             System.out.println("Nomor Kursi : " + pesawat1[p].getNoKursi());
                             System.out.println("Harga Tiket : " + pesawat1[p].getHarga());
